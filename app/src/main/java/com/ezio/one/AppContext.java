@@ -31,13 +31,13 @@ public class AppContext extends Application {
         super.onCreate();
         APP_CONTEXT = this;
 
-        OkHttpClient okHttpClient = new OkHttpClient.Builder()
-                .connectTimeout(10000L, TimeUnit.MILLISECONDS)
-                .readTimeout(10000L, TimeUnit.MILLISECONDS)
-                //其他配置
-                .build();
-
-        OkHttpUtils.initClient(okHttpClient);
+//        OkHttpClient okHttpClient = new OkHttpClient.Builder()
+//                .connectTimeout(10000L, TimeUnit.MILLISECONDS)
+//                .readTimeout(10000L, TimeUnit.MILLISECONDS)
+//                //其他配置
+//                .build();
+//
+//        OkHttpUtils.initClient(okHttpClient);
 
     }
 

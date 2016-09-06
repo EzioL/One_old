@@ -9,6 +9,12 @@
     tools:context="com.ezio.one.MainActivity">
 
     <include layout="@layout/layout_toolbar" />
+    <ImageView
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_above="@+id/radioGroup"
+        android:background="#959595" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -18,7 +24,9 @@
             android:id="@+id/content"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_above="@+id/line"></FrameLayout>
+            android:layout_above="@+id/line">
+
+        </FrameLayout>
 
         <ImageView
             android:id="@+id/line"

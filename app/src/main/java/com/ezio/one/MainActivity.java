@@ -1,18 +1,18 @@
 package com.ezio.one;
 
-import android.app.Fragment;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.os.Bundle;
 import android.widget.FrameLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
-import com.ezio.one.fragment.HomeFragment;
-import com.ezio.one.fragment.MovieFragment;
-import com.ezio.one.fragment.MusicFragment;
-import com.ezio.one.fragment.ReadingFragment;
+import com.ezio.one.home.HomeFragment;
+import com.ezio.one.movie.MovieFragment;
+import com.ezio.one.music.MusicFragment;
+import com.ezio.one.reading.ReadingFragment;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -53,7 +53,7 @@ public class MainActivity extends BaseActivity {
     private void initView() {
         initToolbarWithSearch("ONE", null);
         //默认显示首页
-        FragmentManager fm = getFragmentManager();
+        FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
         mHomeFragment = new HomeFragment();
         ft.add(R.id.content, mHomeFragment).commit();;
@@ -105,7 +105,7 @@ public class MainActivity extends BaseActivity {
     public void switchFragment(Fragment from, Fragment to) {
         if (currentFragment != to) {
             currentFragment = to;
-            FragmentManager fm = getFragmentManager();
+            FragmentManager fm = getSupportFragmentManager();
             FragmentTransaction ft = fm.beginTransaction();
             if (!to.isAdded()) {    // 先判断是否被add过
                 ft.hide(from).add(R.id.content, to).commit(); // 隐藏当前的fragment，add下一个到Activity中
